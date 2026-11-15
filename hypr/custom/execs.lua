@@ -1,0 +1,1 @@
+-- User Custom Autostart Overrides (Preserved during dotfiles updates)

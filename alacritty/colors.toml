@@ -1,0 +1,32 @@
+# Matugen generated Alacritty colors
+[colors.primary]
+background = "#111418"
+foreground = "#e1e2e8"
+
+[colors.cursor]
+text = "#003258"
+cursor = "#a0cafd"
+
+[colors.selection]
+text = "#003258"
+background = "#a0cafd"
+
+[colors.normal]
+black = "#0b0e13"
+red = "#ffb4ab"
+green = "#d6bee4"
+yellow = "#d7e3f7"
+blue = "#a0cafd"
+magenta = "#bbc7db"
+cyan = "#194975"
+white = "#e1e2e8"
+
+[colors.bright]
+black = "#8d9199"
+red = "#93000a"
+green = "#523f5f"
+yellow = "#bbc7db"
+blue = "#a0cafd"
+magenta = "#3b4858"
+cyan = "#d1e4ff"
+white = "#36393e"

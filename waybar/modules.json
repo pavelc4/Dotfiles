@@ -1,0 +1,157 @@
+{
+  "custom/distro": {
+    "return-type": "json",
+    "exec": "$HOME/.config/scripts/distro-icon.sh",
+    "interval": "once",
+    "tooltip": true,
+    "on-click": "ghostty",
+    "on-click-right": "vicinae toggle"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H\n%M}",
+    "format-alt": "{:%d\n%m}",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰮯",
+      "default": "󰮯",
+      "empty": "•",
+      "urgent": "󰀨"
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "rewrite": {
+      "(.*)Zen Browser.*": "Zen Browser",
+      "(.*)Ghostty.*": "Ghostty",
+      "(.*)Zed.*": "Zed",
+      "(.*)Visual Studio Code.*": "VS Code",
+      "(.*)Code.*": "VS Code",
+      "(.*)Firefox.*": "Firefox",
+      "(.*)Chrome.*": "Chrome",
+      "(.*)Discord.*": "Discord",
+      "(.*)Spotify.*": "Spotify",
+      "(.*)Thunar.*": "Thunar",
+      "^$": "Desktop"
+    },
+    "fallback": "Desktop",
+    "rotate": 270,
+    "max-length": 22,
+    "separate-outputs": true
+  },
+  "group/extras": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 400,
+      "children-class": "extras",
+      "transition-left-to-right": false,
+      "hide-leader-when-expanded": true
+    },
+    "modules": [
+      "custom/menu-closed",
+      "custom/menu-open",
+      "tray"
+    ]
+  },
+  "custom/menu-closed": {
+    "format": "󰅂",
+    "tooltip": true,
+    "tooltip-format": "System Tray (Click to expand)"
+  },
+  "custom/menu-open": {
+    "format": "󰅃",
+    "tooltip": true,
+    "tooltip-format": "System Tray (Click to collapse)"
+  },
+  "tray": {
+    "spacing": 10,
+    "icon-size": 16,
+    "reverse-direction": true
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰅶"
+    },
+    "tooltip": true,
+    "tooltip-format-activated": "Caffeine: Active (Screen stays awake)",
+    "tooltip-format-deactivated": "Caffeine: Inactive"
+  },
+  "group/system": {
+    "orientation": "vertical",
+    "modules": [
+      "network",
+      "group/audio",
+      "battery"
+    ]
+  },
+  "group/audio": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "audio-slider",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+  "network": {
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀",
+    "format-linked": "󰈀",
+    "format-disconnected": "󰲝",
+    "format-disabled": "󰤭",
+    "interval": 2,
+    "tooltip": true,
+    "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\nIP: {ipaddr}\nInterface: {ifname}",
+    "tooltip-format-ethernet": "LAN Ethernet: {ipaddr}/{cidr}\nInterface: {ifname}",
+    "tooltip-format-disconnected": "Network Disconnected",
+    "tooltip-format-disabled": "Network Disabled",
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "interval": 1,
+    "format": "{icon}",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "format-muted": "󰝟",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+  "battery": {
+    "interval": 2,
+    "format": "{icon}",
+    "format-icons": [
+      "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+    ],
+    "format-charging": "󰚥",
+    "format-plugged": "󰚥",
+    "tooltip": true,
+    "tooltip-format": "Battery: {capacity}%"
+  },
+  "custom/powermenu": {
+    "format": "󰐥",
+    "tooltip": true,
+    "tooltip-format": "Power Session Menu",
+    "on-click": "wlogout -p layer-shell"
+  }
+}

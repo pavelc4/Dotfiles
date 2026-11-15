@@ -1,0 +1,141 @@
+configuration {
+    show-icons: true;
+    cycle: true;
+
+    kb-primary-paste: "Control+V,Shift+Insert";
+    kb-secondary-paste: "Control+v,Insert";
+    kb-clear-line: "Control+w";
+    kb-move-front: "Control+a";
+    kb-move-end: "Control+e";
+    kb-move-word-back: "Alt+b,Control+Left";
+    kb-move-word-forward: "Alt+f,Control+Right";
+    kb-move-char-back: "";
+    kb-move-char-forward: "";
+    kb-remove-word-back: "Control+Alt+h,Control+BackSpace";
+    kb-remove-word-forward: "Control+Alt+d";
+    kb-remove-char-forward: "Delete,Control+d";
+    kb-remove-char-back: "BackSpace,Shift+BackSpace";
+    kb-remove-to-sol: "Control+u";
+    kb-remove-to-eol: "Control+q";
+    kb-accept-entry: "Return,KP_Enter";
+    kb-accept-custom: "";
+    kb-accept-custom-alt: "";
+    kb-accept-alt: "";
+    kb-delete-entry: "Shift+Delete";
+    kb-mode-next: "Shift+Right,Control+Tab";
+    kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
+    kb-mode-complete: "";
+    kb-row-left: "Left,Up,h,k";
+    kb-row-right: "Right,Down,l,j";
+    kb-row-down: "";
+    kb-row-up: "";
+    kb-page-prev: "Page_Up";
+    kb-page-next: "Page_Down";
+    kb-row-first: "Home,KP_Home";
+    kb-row-last: "End,KP_End";
+    kb-row-select: "Control+space";
+    kb-screenshot: "Alt+S";
+    kb-ellipsize: "Alt+period";
+    kb-toggle-case-sensitivity: "grave,dead_grave";
+    kb-toggle-sort: "Alt+grave";
+    kb-cancel: "Escape,Control+g,Control+bracketleft";
+    ml-row-left: "ScrollLeft";
+    ml-row-right: "ScrollRight";
+    ml-row-up: "ScrollUp";
+    ml-row-down: "ScrollDown";
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    background-color: transparent;
+    separator: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+window {
+    background-color: rgba(10, 12, 16, 0.85);
+    fullscreen: true;
+    border: 0px;
+    separator: none;
+}
+
+mainbox {
+    children: [listview];
+    spacing: 0px;
+    border: 0px;
+    separator: none;
+    padding: 0% 3%;
+    expand: true;
+    orientation: vertical;
+    valign: 0.5;
+}
+
+listview {
+    padding: 20px;
+    spacing: 20px;
+    columns: 3;
+    lines: 1;
+    flow: horizontal;
+    fixed-height: true;
+    scrollbar: false;
+    cycle: true;
+    border: 0px;
+    separator: none;
+    expand: false;
+    valign: 0.5;
+    halign: 0.5;
+}
+
+element {
+    border: 0px;
+    border-radius: 16px;
+    children: [element-icon];
+    background-color: transparent;
+    padding: 6px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+element normal.normal,
+element normal.urgent,
+element normal.active,
+element alternate.normal,
+element alternate.urgent,
+element alternate.active {
+    background-color: transparent;
+    text-color: inherit;
+    border: 0px;
+    border-radius: 16px;
+}
+
+element selected.normal,
+element selected.active,
+element.selected {
+    border: 0px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
+element-icon {
+    size: 380px 214px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    background-color: transparent;
+    expand: true;
+    border-radius: 12px;
+    scale: "fit";
+}
+
+@media ( min-width: 2400 px ) {
+    listview {
+        columns: 4;
+        spacing: 28px;
+    }
+    element-icon {
+        size: 540px 304px;
+        border-radius: 16px;
+    }
+}

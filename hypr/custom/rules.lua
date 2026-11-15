@@ -1,0 +1,1 @@
+-- User Custom Window Rules Overrides (Preserved during dotfiles updates)

@@ -1,0 +1,306 @@
+@import "./colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo", "JetBrainsMono Nerd Font", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: @background;
+  color: @foreground;
+  border-radius: 0;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Pill Style - Strict 32px Width (44px bar - 6px left margin - 6px right margin) */
+#custom-distro,
+#clock,
+#workspaces,
+#window,
+#extras,
+#extras-group,
+#group-extras,
+.extras,
+#idle_inhibitor,
+#system,
+#system-group,
+#group-system,
+.system,
+.group-system,
+box#system,
+box.system,
+#custom-powermenu {
+  background: @surface-high;
+  border-radius: 9999px;
+  min-width: 32px;
+  margin-left: 6px;
+  margin-right: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Top: Distro Logo (32x32 Circle) */
+#custom-distro {
+  min-height: 32px;
+  font-size: 16px;
+  color: @color2;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  padding: 0;
+}
+
+#custom-distro:hover {
+  background: @surface;
+  color: @primary;
+}
+
+/* Clock: HH + MM */
+#clock {
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 6px 0;
+  color: @foreground;
+}
+
+#clock:hover {
+  color: @primary;
+}
+
+/* Workspaces Vertical Capsule */
+#workspaces {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 4px 0;
+}
+
+#workspaces button {
+  min-width: 26px;
+  min-height: 26px;
+  margin: 2px 3px;
+  padding: 0;
+  border-radius: 9999px;
+  color: @foreground;
+  font-size: 11px;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+#workspaces button.active {
+  background: @primary;
+  color: @background;
+  min-height: 32px;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background: @error;
+  color: @background;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Center: Active Window Title (Rotated 270) */
+#window {
+  font-size: 11px;
+  font-weight: 600;
+  color: @foreground;
+  padding: 16px 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Bottom: Drawer Arrow & Tray (Wrapped in Pill) */
+#extras,
+#extras-group,
+#group-extras,
+.extras {
+  background: @surface-high;
+  border-radius: 9999px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 2px 0;
+}
+
+#custom-menu-closed,
+#custom-menu-open {
+  min-height: 28px;
+  min-width: 32px;
+  font-size: 14px;
+  color: @outline;
+  margin: 0;
+  padding: 0;
+}
+
+#custom-menu-closed:hover,
+#custom-menu-open:hover {
+  color: @foreground;
+}
+
+#tray {
+  margin: 4px 0;
+}
+
+#tray > * {
+  padding: 3px 0;
+}
+
+/* Idle Inhibitor (32x32 Circle) */
+#idle_inhibitor {
+  min-height: 32px;
+  font-size: 14px;
+  color: @primary;
+  background: @surface-high;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 0;
+}
+
+#idle_inhibitor.activated {
+  background: @primary;
+  color: @background;
+}
+
+#idle_inhibitor:hover {
+  opacity: 0.85;
+}
+
+/* System Indicators Capsule */
+#system,
+#system-group,
+#group-system,
+.system,
+.group-system,
+box#system,
+box.system {
+  background: @surface-high;
+  border-radius: 9999px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 6px 0;
+}
+
+#network,
+#audio,
+#pulseaudio,
+#battery {
+  background: transparent;
+  min-width: 32px;
+  min-height: 24px;
+  margin: 2px 0;
+  padding: 0;
+  font-size: 13px;
+  color: @foreground;
+}
+
+#network:hover,
+#pulseaudio:hover,
+#battery:hover {
+  color: @primary;
+}
+
+#network.ethernet {
+  color: @color2;
+}
+
+#network.disconnected,
+#network.disabled {
+  color: @error;
+}
+
+#pulseaudio.muted,
+#pulseaudio.sink-muted {
+  color: @outline;
+}
+
+#battery.critical {
+  color: @error;
+}
+
+#battery.charging {
+  color: @color2;
+}
+
+/* Pulseaudio Drawer & Slider */
+#audio {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#pulseaudio-slider {
+  min-height: 60px;
+  min-width: 32px;
+  padding: 4px 0;
+  margin: 2px 0;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 50px;
+  min-width: 5px;
+  margin: 0 13px;
+  border-radius: 9999px;
+  background-color: @surface;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 5px;
+  border-radius: 9999px;
+  background-color: @primary;
+}
+
+#pulseaudio-slider.muted highlight {
+  background-color: @outline;
+}
+
+/* Power Menu Button (32x32 Circle) */
+#custom-powermenu {
+  min-height: 32px;
+  font-size: 14px;
+  color: @error;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+#custom-powermenu:hover {
+  background: @error;
+  color: @background;
+}
+
+/* Tooltip */
+tooltip {
+  background: @surface;
+  border: 1px solid @outline-variant;
+  border-radius: 8px;
+  color: @foreground;
+}
+
+tooltip * {
+  color: @foreground;
+  background: transparent;
+  padding: 4px;
+}

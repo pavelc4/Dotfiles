@@ -1,0 +1,16 @@
+hl.on("hyprland.start", function()
+    -- Environment activation (Wayland, portals, Firefox/Zen native Wayland)
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP MOZ_ENABLE_WAYLAND")
+    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP MOZ_ENABLE_WAYLAND")
+
+    -- Core desktop daemons
+    hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+    hl.exec_cmd("waybar &")
+    hl.exec_cmd("mako &")
+    hl.exec_cmd("vicinae server &")
+    hl.exec_cmd("awww-daemon &")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store &")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store &")
+    hl.exec_cmd("hypridle &")
+    hl.exec_cmd("~/.config/scripts/theme-sync.sh --init &")
+end)

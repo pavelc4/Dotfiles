@@ -1,0 +1,10 @@
+/* Matugen generated Rofi colors */
+* {
+    background: #111418;
+    foreground: #e1e2e8;
+    primary: #a0cafd;
+    secondary: #bbc7db;
+    surface-container: #1d2024;
+    outline: #8d9199;
+    error: #ffb4ab;
+}
