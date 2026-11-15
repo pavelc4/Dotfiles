@@ -4,6 +4,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- Toolkit & Wayland defaults
 hl.env("MOZ_ENABLE_WAYLAND", "1")
+hl.env("LIBVA_DRIVER_NAME", "iHD")
 hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
