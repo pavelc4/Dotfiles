@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Smooth Screen Zoom Controller for Hyprland
-# Keybindings: SUPER + = / + (zoom in), SUPER + - (zoom out), SUPER + 0 (reset)
+# Smooth Screen Zoom Controller for Hyprland (Native Lua REPL IPC)
+# Keybindings: SUPER + = / + (zoom in), SUPER + - (zoom out), SUPER + Backspace / ALT+0 (reset)
 
 STEP="0.25"
 MIN_ZOOM="1.0"
@@ -21,7 +21,7 @@ case "$action" in
             if (val > m) val = m;
             printf "%.2f", val
         }')
-        hyprctl keyword cursor:zoom_factor "$new_val"
+        hyprctl repl "hl.config({ cursor = { zoom_factor = $new_val } })" >/dev/null 2>&1
         ;;
     out)
         new_val=$(awk -v c="$current" -v s="$STEP" -v min="$MIN_ZOOM" 'BEGIN {
@@ -29,10 +29,10 @@ case "$action" in
             if (val <= min) val = min;
             printf "%.2f", val
         }')
-        hyprctl keyword cursor:zoom_factor "$new_val"
+        hyprctl repl "hl.config({ cursor = { zoom_factor = $new_val } })" >/dev/null 2>&1
         ;;
     reset)
-        hyprctl keyword cursor:zoom_factor 1.0
+        hyprctl repl "hl.config({ cursor = { zoom_factor = 1.0 } })" >/dev/null 2>&1
         ;;
     *)
         echo "Usage: $0 [in|out|reset]"

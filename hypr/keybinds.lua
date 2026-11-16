@@ -65,11 +65,31 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Screen Magnification / Zoom
-hl.bind("SUPER + equal", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh in"), { repeating = true })
-hl.bind("SUPER + plus", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh in"), { repeating = true })
-hl.bind("SUPER + minus", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh out"), { repeating = true })
-hl.bind("SUPER + BackSpace", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh reset"))
-hl.bind("SUPER + ALT + 0", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh reset"))
+local current_zoom = 1.0
+
+local function change_zoom(delta)
+    current_zoom = math.max(1.0, math.min(5.0, current_zoom + delta))
+    hl.config({
+        cursor = {
+            zoom_factor = current_zoom,
+        },
+    })
+end
+
+local function reset_zoom()
+    current_zoom = 1.0
+    hl.config({
+        cursor = {
+            zoom_factor = 1.0,
+        },
+    })
+end
+
+hl.bind("SUPER + equal", function() change_zoom(0.25) end, { repeating = true })
+hl.bind("SUPER + plus", function() change_zoom(0.25) end, { repeating = true })
+hl.bind("SUPER + minus", function() change_zoom(-0.25) end, { repeating = true })
+hl.bind("SUPER + BackSpace", reset_zoom)
+hl.bind("SUPER + ALT + 0", reset_zoom)
 
 -- Session controls
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("gtklock || hyprlock || loginctl lock-session"))

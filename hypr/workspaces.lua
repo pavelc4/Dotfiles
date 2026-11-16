@@ -9,13 +9,15 @@ local function get_active_monitor_index()
     if not mon then
         return 0
     end
+    if mon.name == "HDMI-A-1" then
+        return 1
+    elseif mon.name == "DP-1" or mon.name == "DP-2" then
+        return 2
+    elseif mon.name == "eDP-1" then
+        return 0
+    end
     if mon.id and type(mon.id) == "number" then
         return mon.id
-    end
-    if mon.name == "eDP-1" then
-        return 0
-    elseif mon.name == "HDMI-A-1" then
-        return 1
     end
     return 0
 end
@@ -35,20 +37,21 @@ for i = 1, 10 do
     })
 end
 
--- External Displays (HDMI-A-1, DP-1, DP-2): Workspaces 11..20
+-- External Display (HDMI-A-1): Workspaces 11..20
 for i = 11, 20 do
     hl.workspace_rule({
         workspace = tostring(i),
         monitor = "HDMI-A-1",
         default = (i == 11),
     })
+end
+
+-- Dock / Secondary Display (DP-1 / DP-2): Workspaces 21..30
+for i = 21, 30 do
     hl.workspace_rule({
         workspace = tostring(i),
         monitor = "DP-1",
-    })
-    hl.workspace_rule({
-        workspace = tostring(i),
-        monitor = "DP-2",
+        default = (i == 21),
     })
 end
 
