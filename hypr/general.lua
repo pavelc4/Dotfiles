@@ -9,6 +9,12 @@ hl.config({
         },
     },
 
+    cursor = {
+        zoom_factor = 1.0,
+        zoom_rigid = false,
+        zoom_detached_camera = true,
+    },
+
     general = {
         gaps_in = 4,
         gaps_out = 8,

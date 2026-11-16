@@ -18,6 +18,7 @@ end
 
 -- Core configuration modules
 require("monitors")
+require("workspaces")
 require("env")
 require("execs")
 require("general")

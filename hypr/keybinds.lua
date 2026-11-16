@@ -64,21 +64,12 @@ hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Workspaces (1-10)
-for i = 1, 10 do
-    local key = i % 10
-    hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind("SUPER + ALT + " .. key, hl.dsp.window.move({ workspace = i }))
-    hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
-end
-
--- Relative workspace navigation
-hl.bind("CTRL + SUPER + Left", hl.dsp.focus({ workspace = "r-1" }))
-hl.bind("CTRL + SUPER + Right", hl.dsp.focus({ workspace = "r+1" }))
-hl.bind("SUPER + Page_Down", hl.dsp.focus({ workspace = "r+1" }))
-hl.bind("SUPER + Page_Up", hl.dsp.focus({ workspace = "r-1" }))
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "+1" }))
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "-1" }))
+-- Screen Magnification / Zoom
+hl.bind("SUPER + equal", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh in"), { repeating = true })
+hl.bind("SUPER + plus", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh in"), { repeating = true })
+hl.bind("SUPER + minus", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh out"), { repeating = true })
+hl.bind("SUPER + BackSpace", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh reset"))
+hl.bind("SUPER + ALT + 0", hl.dsp.exec_cmd(scriptsDir .. "/zoom.sh reset"))
 
 -- Session controls
 hl.bind("SUPER + Escape", hl.dsp.exec_cmd("gtklock || hyprlock || loginctl lock-session"))

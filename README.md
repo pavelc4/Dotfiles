@@ -71,15 +71,25 @@ A modern, minimalist, and dynamic Wayland desktop environment built on **Hyprlan
 | **Right** | `SUPER + Right` or `SUPER + L` | `SUPER + SHIFT + Right` or `SUPER + SHIFT + L` |
 | **Up** | `SUPER + Up` or `SUPER + K` | `SUPER + SHIFT + Up` or `SUPER + SHIFT + K` |
 | **Down** | `SUPER + Down` or `SUPER + J` | `SUPER + SHIFT + Down` or `SUPER + SHIFT + J` |
+| **Move Across Monitors** | `SUPER + [ / ]` (Focus Monitor) | `SUPER + SHIFT + [ / ]` or `SUPER + ALT + Left / Right` |
 
-### Workspace Management
-| Shortcut | Action |
-| :--- | :--- |
-| `SUPER + 1..10` | Switch directly to Workspace 1 through 10 |
-| `SUPER + SHIFT + 1..10` | Move focused window to Workspace 1 through 10 |
-| `CTRL + SUPER + Left / Right` | Relative workspace navigation (previous / next) |
-| `SUPER + Page_Up / Page_Down` | Relative workspace navigation (previous / next) |
-| `SUPER + Mouse Scroll Up / Down` | Quick workspace cycling via mouse wheel |
+### Independent Monitor Workspaces (Isolated per Display)
+Workspaces are strictly isolated per monitor: Laptop (`eDP-1`) owns workspaces `1..10`, and External displays (`HDMI-A-1`) own their own independent `1..10` (mapped to `11..20`).
+| Shortcut | Action | Description |
+| :--- | :--- | :--- |
+| `SUPER + 1..10` | Switch Workspace | Switches to workspace 1..10 on the currently active monitor |
+| `SUPER + SHIFT + 1..10` | Move Window to Workspace | Moves active window to workspace 1..10 on active monitor |
+| `SUPER + ALT + 1..10` | Move Window & Follow | Moves active window and follows focus on active monitor |
+| `CTRL + SUPER + Left / Right` | Relative Navigation | Cycles relative workspace on current active monitor (`r-1` / `r+1`) |
+| `SUPER + Page_Up / Page_Down` | Relative Navigation | Cycles relative workspace on current active monitor (`r-1` / `r+1`) |
+| `SUPER + Mouse Scroll Up / Down` | Quick Wheel Cycling | Relative workspace cycling via mouse wheel |
+
+### Screen Magnification / Zoom
+| Shortcut | Action | Description |
+| :--- | :--- | :--- |
+| `SUPER + =` / `SUPER + +` | Zoom In | Smoothly magnifies display around cursor (+0.25x step) |
+| `SUPER + -` | Zoom Out | Decreases magnification (-0.25x step down to 1.0x) |
+| `SUPER + Backspace` / `SUPER + ALT + 0` | Reset Zoom | Instantly resets zoom level to 1.0x |
 
 ### Session & Media Controls
 | Shortcut | Action |
