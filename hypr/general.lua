@@ -69,6 +69,15 @@ hl.config({
         preserve_split = true,
     },
 
+    gestures = {
+        workspace_swipe_distance = 700,
+        workspace_swipe_cancel_ratio = 0.2,
+        workspace_swipe_min_speed_to_force = 5,
+        workspace_swipe_direction_lock = true,
+        workspace_swipe_direction_lock_threshold = 10,
+        workspace_swipe_create_new = true,
+    },
+
     misc = {
         force_default_wallpaper = 0,
         disable_hyprland_logo = true,
@@ -76,4 +85,39 @@ hl.config({
         mouse_move_enables_dpms = true,
         key_press_enables_dpms = true,
     },
+})
+
+-- Touchpad Gestures (end-4 style)
+hl.gesture({
+    fingers = 3,
+    direction = "swipe",
+    action = "move",
+})
+
+hl.gesture({
+    fingers = 3,
+    direction = "pinch",
+    action = "fullscreen",
+})
+
+hl.gesture({
+    fingers = 4,
+    direction = "horizontal",
+    action = "workspace",
+})
+
+hl.gesture({
+    fingers = 4,
+    direction = "up",
+    action = function()
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl dispatch hyprexpo:expo toggle"))
+    end,
+})
+
+hl.gesture({
+    fingers = 4,
+    direction = "down",
+    action = function()
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl dispatch hyprexpo:expo toggle"))
+    end,
 })

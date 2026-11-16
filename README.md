@@ -17,6 +17,8 @@ A modern, minimalist, and dynamic Wayland desktop environment built on **Hyprlan
 - **Dynamic Display Auto-Configuration**: Wildcard display rules (`output = ""`) that automatically detect and configure external monitors, projectors, and variable refresh rates without manual editing.
 - **Material You Dynamic Theming**: Wallpaper-derived color schemes generated automatically via **Matugen** (`scheme-tonal-spot`), synchronizing colors across borders, Waybar, Mako, Ghostty, GTK 3/4, and Vicinae.
 - **Widescreen Wallpaper Selector (`SUPER + W`)**: Clean, borderless 16:9 carousel preview with fluid fade transitions and reliable instant theme switching.
+- **Precision Touchpad Gestures (end-4 Style)**: Fluid 1:1 multi-finger gestures using native Lua Hyprland 0.57.2+ API (4-finger workspace swipe, 3-finger window move, 3-finger fullscreen pinch).
+- **Official Hyprland Plugins**: Integrated **HyprExpo** (macOS/GNOME style workspace overview grid) and **HyprFocus** (flash pulse focus animations).
 - **Dual Terminal Integration**: Ultra-fast **Ghostty** terminal as the primary terminal with **Alacritty** as secondary fallback.
 - **Application & Clipboard Hub**: **Vicinae** launcher integration featuring instant search, fuzzy emoji lookup, and preview-enabled clipboard history.
 
@@ -28,6 +30,7 @@ A modern, minimalist, and dynamic Wayland desktop environment built on **Hyprlan
 | `SUPER + Return` | Primary Terminal | Ghostty (fallback to Alacritty) |
 | `SUPER + ALT + Return` | Secondary Terminal | Alacritty |
 | `SUPER + Space` / `SUPER + A` | Application Launcher | Vicinae App Launcher |
+| `SUPER + Tab` / `SUPER + \`` | Workspace Overview | HyprExpo 3x3 Grid Overview |
 | `SUPER + B` | Web Browser | Firefox Developer / Zen / Chrome |
 | `SUPER + E` | File Manager GUI | Thunar File Manager |
 | `SUPER + ALT + E` | Terminal File Manager | Yazi (inside Ghostty / Alacritty) |
@@ -93,6 +96,24 @@ A modern, minimalist, and dynamic Wayland desktop environment built on **Hyprlan
 | `MediaPlay / SUPER + SHIFT + P` | Play / Pause Media |
 | `MediaNext / SUPER + SHIFT + N` | Next Track |
 | `MediaPrev / SUPER + SHIFT + B` | Previous Track |
+
+### Touchpad Gestures (end-4 Style)
+| Gesture | Action | Description |
+| :--- | :--- | :--- |
+| **4-Finger Horizontal Swipe** | Workspace Switch | Fluid 1:1 sliding transition across workspaces |
+| **4-Finger Swipe Up / Down** | Overview Toggle | Toggles HyprExpo workspace overview grid |
+| **3-Finger Swipe** | Move Active Window | Interactively drags and rearranges active window |
+| **3-Finger Pinch** | Fullscreen Toggle | Pinches to enter or exit true fullscreen |
+
+## Plugins & Extensions
+Hyprland official plugins enhance desktop usability with hardware-accelerated animations:
+- **HyprExpo**: Exposé-style multi-workspace overview grid (`SUPER + Tab` or 4-finger swipe up).
+- **HyprFocus**: Responsive flash focus animation when switching between active windows.
+
+To install and compile the plugins automatically:
+```bash
+./scripts/setup-hyprland-plugins.sh
+```
 
 ## Theming Engine
 1. **Wallpaper Carousel (`SUPER + W`)**:

@@ -5,9 +5,11 @@ local scriptsDir = HOME .. "/.config/scripts"
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("ghostty || alacritty"))
 hl.bind("SUPER + ALT + Return", hl.dsp.exec_cmd("alacritty"))
 
--- Launcher (Vicinae)
+-- Launcher (Vicinae) & Overview (HyprExpo)
 hl.bind("SUPER + Space", hl.dsp.exec_cmd("vicinae toggle"))
 hl.bind("SUPER + A", hl.dsp.exec_cmd("vicinae toggle"))
+hl.bind("SUPER + Tab", hl.dsp.exec_cmd("hyprctl dispatch hyprexpo:expo toggle"))
+hl.bind("SUPER + grave", hl.dsp.exec_cmd("hyprctl dispatch hyprexpo:expo toggle"))
 
 -- Browser, File Manager, Editors
 hl.bind("SUPER + B", hl.dsp.exec_cmd("firefox-developer-edition || firefox || google-chrome-stable"))
