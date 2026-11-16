@@ -96,7 +96,7 @@ hl.bind("SUPER + Escape", hl.dsp.exec_cmd("gtklock || hyprlock || loginctl lock-
 hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("gtklock || hyprlock || loginctl lock-session"))
 hl.bind("SUPER + ALT + L", hl.dsp.exec_cmd("gtklock || hyprlock || loginctl lock-session"))
 hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("systemctl suspend || loginctl suspend"))
-hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("wlogout -p layer-shell || loginctl terminate-user $USER"))
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("vicinae toggle -q 'power' || loginctl terminate-user $USER"))
 
 -- Multimedia keys (Volume & Brightness)
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1.5"), { locked = true, repeating = true })

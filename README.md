@@ -96,7 +96,7 @@ Workspaces are strictly isolated per monitor: Laptop (`eDP-1`) owns workspaces `
 | :--- | :--- |
 | `SUPER + Escape` / `SUPER + SHIFT + Q` | Lock Screen (gtklock / hyprlock) |
 | `SUPER + SHIFT + L` | Suspend System (Sleep mode) |
-| `CTRL + ALT + Delete` | Power & Session Menu (Wlogout) |
+| `CTRL + ALT + Delete` | Power & Session Menu (Vicinae Power) |
 | `Fn + F1` / `AudioMute` | Mute / Unmute Speaker Audio |
 | `Fn + F2` / `LowerVolume` | Lower Audio Volume (-2%) |
 | `Fn + F3` / `RaiseVolume` | Raise Audio Volume (+2%, max 150%) |

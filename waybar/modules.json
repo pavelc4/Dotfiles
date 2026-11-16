@@ -154,7 +154,7 @@
   "custom/powermenu": {
     "format": "󰐥",
     "tooltip": true,
-    "tooltip-format": "Power Session Menu",
-    "on-click": "wlogout -p layer-shell"
+    "tooltip-format": "Power Session Menu (Vicinae)",
+    "on-click": "vicinae toggle -q 'power'"
   }
 }

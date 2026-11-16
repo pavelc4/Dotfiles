@@ -42,7 +42,7 @@ SUDO_PID=""
 # Expected configuration folders in the repo
 readonly CONFIG_FOLDERS=(
   hypr niri waybar fish ghostty mako alacritty starship
-  yazi vicinae gtklock wlogout zathura matugen rofi scripts
+  yazi vicinae gtklock zathura matugen rofi scripts
 )
 
 # Optional dependencies that waybar modules depend on
@@ -69,7 +69,7 @@ readonly PACMAN_PACKAGES=(
   waybar fish fastfetch mako alacritty ghostty starship neovim yazi
   zathura zathura-pdf-mupdf ttf-jetbrains-mono-nerd
   qt5-wayland qt6-wayland polkit-gnome ffmpeg imagemagick unzip jq
-  gtklock wlogout rofi curl libnotify
+  gtklock rofi curl libnotify
 )
 
 # ==========================

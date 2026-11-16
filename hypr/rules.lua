@@ -54,22 +54,6 @@ hl.layer_rule({
     animation = "slide bottom",
 })
 
--- Wlogout (Session Dialog) Deep Frosted Glass Blur
-hl.layer_rule({
-    name = "wlogout-blur",
-    match = { namespace = "logout_dialog" },
-    blur = true,
-    blur_popups = true,
-    ignore_alpha = true,
-})
-hl.layer_rule({
-    name = "wlogout-ns-blur",
-    match = { namespace = "wlogout" },
-    blur = true,
-    blur_popups = true,
-    ignore_alpha = true,
-})
-
 -- Waybar Blur (General, Laptop & External Bars)
 hl.layer_rule({
     name = "waybar-blur",
