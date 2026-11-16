@@ -23,7 +23,7 @@ window#waybar {
   padding: 0;
 }
 
-/* Base Pill Style - Strict 32px Width (44px bar - 6px left margin - 6px right margin) */
+/* Base Pill Style */
 #custom-distro,
 #clock,
 #workspaces,
@@ -43,18 +43,104 @@ box.system,
 #custom-powermenu {
   background: @surface-high;
   border-radius: 9999px;
-  min-width: 32px;
-  margin-left: 6px;
-  margin-right: 6px;
+  min-width: 28px;
+  margin-left: 5px;
+  margin-right: 5px;
   transition: all 0.2s ease;
 }
 
-/* Top: Distro Logo (32x32 Circle) */
+/* External Display: Generous 48px scaling */
+window#waybar.external #custom-distro,
+window#waybar.external #clock,
+window#waybar.external #workspaces,
+window#waybar.external #window,
+window#waybar.external #extras,
+window#waybar.external #extras-group,
+window#waybar.external #group-extras,
+window#waybar.external .extras,
+window#waybar.external #idle_inhibitor,
+window#waybar.external #system,
+window#waybar.external #system-group,
+window#waybar.external #group-system,
+window#waybar.external .system,
+window#waybar.external .group-system,
+window#waybar.external box#system,
+window#waybar.external box.system,
+window#waybar.external #custom-powermenu {
+  min-width: 36px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+window#waybar.external #custom-distro {
+  min-height: 36px;
+  font-size: 18px;
+}
+
+window#waybar.external #clock {
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+window#waybar.external #workspaces button {
+  min-width: 28px;
+  min-height: 28px;
+  margin: 2px 3px;
+  font-size: 15px;
+}
+
+window#waybar.external #workspaces button.active {
+  min-height: 34px;
+  font-size: 16px;
+}
+
+window#waybar.external #workspaces button.empty {
+  font-size: 11px;
+}
+
+/* Laptop Display: Compact 38px scaling (prevents overflow on many workspaces) */
+window#waybar.laptop #custom-distro {
+  min-height: 28px;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+window#waybar.laptop #clock {
+  font-size: 10px;
+  padding: 4px 0;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+window#waybar.laptop #workspaces {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 2px 0;
+}
+
+window#waybar.laptop #workspaces button {
+  min-width: 22px;
+  min-height: 20px;
+  margin: 1px 2px;
+  font-size: 12px;
+}
+
+window#waybar.laptop #workspaces button.active {
+  min-height: 26px;
+  font-size: 13px;
+}
+
+window#waybar.laptop #workspaces button.empty {
+  font-size: 9px;
+}
+
+/* Top: Distro Logo */
 #custom-distro {
-  min-height: 32px;
+  min-height: 30px;
   font-size: 16px;
   color: @color2;
-  margin-top: 6px;
+  margin-top: 5px;
   margin-bottom: 3px;
   padding: 0;
 }
@@ -70,7 +156,7 @@ box.system,
   font-weight: 700;
   margin-top: 3px;
   margin-bottom: 3px;
-  padding: 6px 0;
+  padding: 5px 0;
   color: @foreground;
 }
 
@@ -82,17 +168,17 @@ box.system,
 #workspaces {
   margin-top: 3px;
   margin-bottom: 3px;
-  padding: 4px 0;
+  padding: 3px 0;
 }
 
 #workspaces button {
-  min-width: 26px;
-  min-height: 26px;
-  margin: 2px 3px;
+  min-width: 24px;
+  min-height: 22px;
+  margin: 1.5px 2.5px;
   padding: 0;
   border-radius: 9999px;
   color: @foreground;
-  font-size: 11px;
+  font-size: 13px;
   transition: all 0.2s ease;
   background: transparent;
 }
@@ -100,8 +186,14 @@ box.system,
 #workspaces button.active {
   background: @primary;
   color: @background;
-  min-height: 32px;
+  min-height: 28px;
+  font-size: 14px;
   font-weight: bold;
+}
+
+#workspaces button.empty {
+  color: alpha(@foreground, 0.4);
+  font-size: 10px;
 }
 
 #workspaces button.urgent {

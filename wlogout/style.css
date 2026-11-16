@@ -1,29 +1,61 @@
 * {
-	all: unset;
-	background-image: none;
-	transition: 300ms cubic-bezier(0.05, 0.7, 0.1, 1);
+    all: unset;
+    background-image: none;
+    transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 window {
-	background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(10, 10, 18, 0.72);
 }
 
 button {
-	font-family: 'JetBrainsMono Nerd Font', 'Material Symbols Outlined', sans-serif;
-	font-size: 1.5rem;
-	font-weight: bold;
-	background-color: rgba(25, 25, 30, 0.7);
-	color: #ffffff;
-	margin: 1.5rem;
-	border-radius: 1.5rem;
-	padding: 2.5rem;
-	border: 2px solid rgba(255, 255, 255, 0.1);
+    font-family: 'JetBrainsMono Nerd Font Propo', 'JetBrainsMono Nerd Font', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e2e2ea;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 20px;
+    margin: 1.2rem;
+    padding-top: 86px;
+    background-repeat: no-repeat;
+    background-position: center 32%;
+    background-size: 54px 54px;
 }
 
 button:focus,
 button:active,
 button:hover {
-	background-color: rgba(60, 60, 75, 0.85);
-	border-color: rgba(208, 188, 255, 0.8);
-	border-radius: 2rem;
+    background-color: rgba(208, 188, 255, 0.22);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 24px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+#lock {
+    background-image: image(url("/home/pavelc4/.config/wlogout/icons/lock.svg"));
+}
+
+#logout {
+    background-image: image(url("/home/pavelc4/.config/wlogout/icons/logout.svg"));
+}
+
+#suspend {
+    background-image: image(url("/home/pavelc4/.config/wlogout/icons/suspend.svg"));
+}
+
+#hibernate {
+    background-image: image(url("/home/pavelc4/.config/wlogout/icons/hibernate.svg"));
+}
+
+#shutdown {
+    background-image: image(url("/home/pavelc4/.config/wlogout/icons/shutdown.svg"));
+}
+
+#reboot {
+    background-image: image(url("/home/pavelc4/.config/wlogout/icons/reboot.svg"));
 }

@@ -5,28 +5,28 @@
     "keybind" : "l"
 }
 {
-    "label" : "hibernate",
-    "action" : "systemctl hibernate || loginctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
-}
-{
     "label" : "logout",
-    "action" : "pkill -u $USER || loginctl terminate-user $USER",
+    "action" : "hyprctl dispatch exit || loginctl terminate-user $USER",
     "text" : "Logout",
     "keybind" : "e"
-}
-{
-    "label" : "shutdown",
-    "action" : "systemctl poweroff || loginctl poweroff",
-    "text" : "Shutdown",
-    "keybind" : "s"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend || loginctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate || loginctl hibernate",
+    "text" : "Hibernate",
+    "keybind" : "h"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff || loginctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
 }
 {
     "label" : "reboot",
